@@ -21,7 +21,7 @@ public class HelloController {
 
     @RequestMapping("/")
     @ResponseBody
-    public String home() {
+    public String getMessage() {
         return helloService.getMessage();
     }
 }
