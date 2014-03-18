@@ -12,15 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import app.service.HelloService;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HelloController {
 
     @Autowired
     HelloService helloService;
 
     @RequestMapping("/")
-    @ResponseBody
     public String getMessage() {
         return helloService.getMessage();
     }
