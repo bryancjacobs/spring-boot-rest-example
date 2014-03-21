@@ -1,4 +1,4 @@
-package app;
+package app.config;
 
 import org.apache.catalina.connector.Connector;
 import org.springframework.beans.factory.annotation.Autowired;
