@@ -1,11 +1,13 @@
 package app.model;
 
+import java.io.Serializable;
+
 /**
  * User: Bryan
  * Date: 3/20/14
  * Time: 8:25 PM
  */
-public class Person {
+public class Person implements Serializable {
 
     private Long id;
 
@@ -57,5 +59,14 @@ public class Person {
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }
