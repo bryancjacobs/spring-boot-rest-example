@@ -30,7 +30,7 @@ public class PersonMBean {
         return personService.getById(id).toString();
     }
 
-    @ManagedOperation(description = "get a person by their id")
+    @ManagedOperation(description = "get everyone")
     public List<String> getAll() {
 
         List<String> persons = new ArrayList<>();
