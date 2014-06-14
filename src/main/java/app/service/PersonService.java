@@ -23,8 +23,6 @@ public class PersonService {
     @Autowired
     PersonRepository personRepository;
 
-    @ManagedOperation(description = "get a person by their id")
-    @ManagedOperationParameters( { @ManagedOperationParameter(name = "id", description = "id of person") })
     public Person getById(Long id){
         return personRepository.getById(id);
     }
