@@ -31,6 +31,11 @@ public class PersonRest {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Person getById(@PathVariable("id") Long id) {
+
+        if (id < 0) {
+            throw new IllegalArgumentException("id must not be less than zero: " + id);
+        }
+
         return personService.getById(id);
     }
 }

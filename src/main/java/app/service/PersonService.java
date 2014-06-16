@@ -3,10 +3,6 @@ package app.service;
 import app.model.Person;
 import app.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jmx.export.annotation.ManagedOperation;
-import org.springframework.jmx.export.annotation.ManagedOperationParameter;
-import org.springframework.jmx.export.annotation.ManagedOperationParameters;
-import org.springframework.jmx.export.annotation.ManagedResource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +19,12 @@ public class PersonService {
     @Autowired
     PersonRepository personRepository;
 
-    public Person getById(Long id){
+    public Person getById(Long id) {
+
+        if (id == null) {
+            throw new IllegalArgumentException("id mut not be null");
+        }
+
         return personRepository.getById(id);
     }
 

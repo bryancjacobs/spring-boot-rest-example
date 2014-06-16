@@ -25,6 +25,10 @@ public class PersonRepository {
 
     public Person getById(Long id) {
 
+        if(id == null) {
+            throw new IllegalArgumentException("id must not be null");
+        }
+
         return template.queryForObject("select * from person where id = ?", new RowMapper<Person>() {
             @Override
             public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
